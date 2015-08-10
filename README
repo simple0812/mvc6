@@ -45,3 +45,9 @@ k ef migration apply
 
 5.把EF相关的内容注入到.NET5的默认容器中，以方便构造函数注入
 修改Startup.cs添加ConfigureServices方法
+
+
+参考地址：
+http://www.cnblogs.com/n-pei/p/4274907.html
+http://www.cnblogs.com/n-pei/p/4272105.html
+http://www.cnblogs.com/n-pei/p/4263148.html
