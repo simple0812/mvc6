@@ -1,0 +1,47 @@
+#asp.net 5
+
+1.安装kvm(.net version manager)
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.ps1'))"
+
+//安装最新的KRE(runtime engine)
+kvm install latest –p 
+
+2..创建第一个应用程序(Startup.cs and project.json)
+kpm install Microsoft.AspNet.Hosting 1.0.0-beta3
+kpm install Microsoft.AspNet.Server.WebListener 1.0.0-beta3
+
+在project.json添加属性：
+"commands": {
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+    }
+
+
+3. k web 启动
+
+
+#asp.mvc 6
+1.安装mvc6的包
+kpm install Microsoft.AspNet.Mvc 6.0.0-beta3
+
+2.添加路由和控制器
+
+
+
+#ef 7
+1.安装EF7的包
+kpm install EntityFramework.SqlServer 7.0.0-beta3
+kpm install EntityFramework.Commands 7.0.0-beta3
+
+
+2.添加ef命令
+修改project.json command属性 
+添加 "ef" : "EntityFramework.Commands"
+
+3.添加MyDbContext.cs
+
+4.使用migration来生成code-first的代码
+k ef migration add "initial"
+k ef migration apply
+
+5.把EF相关的内容注入到.NET5的默认容器中，以方便构造函数注入
+修改Startup.cs添加ConfigureServices方法
