@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "WebApplication1"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "server=.;User ID=sa;Password=123;DataBase=TodoItems;Persist Security Info=True;Pooling=true;Max Pool Size=700"
+    }
+  }
+}

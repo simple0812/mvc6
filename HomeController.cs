@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Framework.DependencyInjection;
+using System.Diagnostics;
 
 public class HomeController : Controller {
 
@@ -13,6 +14,7 @@ public class HomeController : Controller {
 
     public IActionResult Index() {
         var list = _db.Todos.ToList();
+        Debug.WriteLine(list);
 
         return View(list);
     }
